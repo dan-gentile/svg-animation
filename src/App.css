@@ -35,7 +35,7 @@
   bottom: 0px;
   left: 0px;
   opacity: 0;
-  animation: opacity 500ms 2s ease-in forwards;
+  animation: opacity 2750ms ease-in forwards;
 }
 .rose-svg {
   height: 430px;
