@@ -1,38 +1,88 @@
 .App {
-  text-align: center;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
+  grid-row: 1;
+  grid-column: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.image {
+  height: 710px;
+  width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.image::before {
+  background-image: url(./images/rcm-logo.png);
+  background-size: cover;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+  animation: opacity 500ms 2s ease-in forwards;
+}
+.rose-svg {
+  height: 430px;
+  width: 200px;
+  fill: #3b3b3b;
+  fill-opacity: 0;
+  animation: fill-in 500ms 2s ease-in forwards;
+}
+
+.cls-1 {
+  stroke: #3b3b3b;
+  stroke-width: 1px;
+  stroke-dasharray: 262;
+  stroke-dashoffset: 262;
+  animation: draw 2s ease-in forwards;
+}
+
+.cls-2 {
+  stroke: #3b3b3b;
+  stroke-width: 1px;
+  stroke-dasharray: 266;
+  stroke-dashoffset: 266;
+  animation: draw 2s ease-in forwards;
+}
+
+.cls-3 {
+  stroke: #3b3b3b;
+  stroke-width: 1px;
+  stroke-dasharray: 1156;
+  stroke-dashoffset: 1156;
+  animation: draw 2s ease-in forwards;
+}
+
+@keyframes draw {
   to {
-    transform: rotate(360deg);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill-in {
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  to {
+    opacity: 1;
   }
 }
